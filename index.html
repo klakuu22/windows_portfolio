@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style/style.css">
+    <script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+	<script src="skrypty/skrypty.js"></script>
+  </head>
+  <body onload="czas()">
+  
+<div id="desktop">
+	<div id="kalkulator">
+		<img class="ikonaPlik" src="jpg/ikony/kalkulator.png"></img>
+		<div id="naglowekKalkulator">Kalkulator</div>
+		<div id="zamknijOkno" onclick="zamknijOkno('kalkulator','kalkulator')"><i class="fas fa-times textShadow"></i></div>
+		<div id="minimalizujOkno" onclick="minimalizujOkno('kalkulator')"><i class="fas fa-minus textShadow"></i></div>
+		
+		<div id="kontenerKalkulator">
+			<div id="ekranKalkulator">0</div>
+			
+			<div onclick="wypisz(7)" class="przyciskKalkulator">7</div>
+			<div onclick="wypisz(8)" class="przyciskKalkulator">8</div>
+			<div onclick="wypisz(9)" class="przyciskKalkulator">9</div>
+			<div onclick="wypisz('+')" class="przyciskKalkulator">+</div>
+			<div onclick="wypisz(4)" class="przyciskKalkulator">4</div>
+			<div onclick="wypisz(5)" class="przyciskKalkulator">5</div>
+			<div onclick="wypisz(6)" class="przyciskKalkulator">6</div>
+			<div onclick="wypisz('-')" class="przyciskKalkulator">-</div>
+			<div onclick="wypisz(1)" class="przyciskKalkulator">1</div>
+			<div onclick="wypisz(2)" class="przyciskKalkulator">2</div>
+			<div onclick="wypisz(3)" class="przyciskKalkulator">3</div>
+			<div onclick="wypisz('*')" class="przyciskKalkulator">*</div>
+			<div onclick="wypisz(0)" class="przyciskKalkulator-2">0</div>
+			<div onclick="wypisz('.')" class="przyciskKalkulator">,</div>
+			<div onclick="wypisz('/')" class="przyciskKalkulator">/</div>
+			<div onclick="oblicz()" class="przyciskKalkulator-3">=</div>
+			<div onclick="wyczysc()" class="przyciskKalkulator">C</div>
+		</div>
+	</div>
+	<div id="galeriaMin">
+		<img class="ikonaPlik" src="jpg/ikony/obrazy.png"></img>
+		<div id="naglowekGaleria"></div>
+		<div id="zamknijOkno" onclick="zamknijOkno('galeriaMin','galeria')"><i class="fas fa-times textShadow"></i></div>
+		<div id="powiekszOkno" onclick="powiekszOkno('galeriaMin')"><i class="far fa-square textShadow"></i></div>
+		<div id="minimalizujOkno" onclick="minimalizujOkno('galeriaMin')"><i class="fas fa-minus textShadow"></i></div>
+
+		<div id="kontenerGaleria">
+			<div id="zawartoscGaleria"></div>
+		</div>
+	</div>
+	 <div id="zmienLogo">
+		<div id="zamknijOkno" onclick="zamknijOkno('zmienLogo','logo')"><i class="fas fa-times textShadow"></i></div>
+		<div id="zawartoscZmienLogo">
+			<img onclick="zmienLogo(1)" class="wybierzLogo" src="jpg/logo/1.jpeg"></img>
+			<img onclick="zmienLogo(2)" class="wybierzLogo" src="jpg/logo/2.jpeg"></img>
+			<img onclick="zmienLogo(3)" class="wybierzLogo" src="jpg/logo/3.jpeg"></img>
+			<img onclick="zmienLogo(4)" class="wybierzLogo" src="jpg/logo/4.jpeg"></img>
+			<img onclick="zmienLogo(5)" class="wybierzLogo" src="jpg/logo/5.jpeg"></img>
+			<img onclick="zmienLogo(6)" class="wybierzLogo" src="jpg/logo/6.jpeg"></img>
+			<img onclick="zmienLogo(7)" class="wybierzLogo" src="jpg/logo/7.jpeg"></img>
+			<img onclick="zmienLogo(8)" class="wybierzLogo" src="jpg/logo/8.jpeg"></img>
+		</div>
+	 </div>
+	 <div id="notatnikMin">
+		<img class="ikonaPlik" src="jpg/ikony/dokumenty.png"></img>
+		<div id="naglowekPlik"></div>
+		<div id="zamknijOkno" onclick="zamknijOkno('notatnikMin','notatnik')"><i class="fas fa-times textShadow"></i></div>
+		<div id="powiekszOkno" onclick="powiekszOkno('notatnikMin')"><i class="far fa-square textShadow"></i></div>
+		<div id="minimalizujOkno" onclick="minimalizujOkno('notatnikMin')"><i class="fas fa-minus textShadow"></i></div>
+
+		<div id="kontenerNotatnik">
+			<div id="navPlik">
+				<div class="navOpcja">Plik</div>
+				<div class="navOpcja">Edycja</div>
+				<div class="navOpcja">Format</div>
+				<div class="navOpcja">Widok</div>
+				<div class="navOpcja">Pomoc</div>
+			</div>
+			<div id="zawartoscNotatnik"></div>
+		</div>
+	</div>
+	<div id="folderMin">
+		<div id="zamknijOkno" onclick="zamknijOkno('folderMin','folder')"><i class="fas fa-times textShadow"></i></div>
+		<div id="powiekszOkno" onclick="powiekszOkno('folderMin')"><i class="far fa-square textShadow"></i></div>
+		<div id="minimalizujOkno" onclick="minimalizujOkno('folderMin')"><i class="fas fa-minus textShadow"></i></div>
+		
+		<div id="wsteczFolder"><i class="fas fa-arrow-left"></i></div>
+		<div id="przodFolder"><i class="fas fa-arrow-right"></i></div>
+		
+		<div id="urlIkona"></div>
+		<div id="urlFolder"></div>
+		<div id="szukajFolder">
+			<input id="szukajPole" type="text">
+		</div>
+		<div id="lupaFolder"><i class="fas fa-search"></i></div>
+		
+		
+		<div id="kontenerFolder">
+			<div id="navFolder">
+				<div class="navOpcja">Organizuj</div>
+				<div class="navOpcja">Umieść w bibliotece</div>
+				<div class="navOpcja">Udostępnij</div>
+				<div class="navOpcja">Nagraj</div>
+				<div class="navOpcja">Nowy folder</div>
+			</div>
+			
+			<div id="zawartoscFolder"></div>
+			<div id="leweMenuFolder">
+				<div class="leweMenuOpcja">
+					<img class="leweMenuIkona" src="jpg/ikony/ulubione.png"></img>Ulubione
+				</div>
+				<div class="leweMenuOpcja">
+					<img class="leweMenuIkona" src="jpg/ikony/pobrane.png"></img>Pobrane
+				</div>
+				<div class="leweMenuOpcja">
+					<img class="leweMenuIkona" src="jpg/ikony/pulpit.png"></img>Pulpit
+				</div>
+				<div class="leweMenuOpcja">
+					<img class="leweMenuIkona" src="jpg/ikony/dokumenty.png"></img>Dokumenty
+				</div>
+				<div class="leweMenuOpcja">
+					<img class="leweMenuIkona" src="jpg/ikony/muzyka.png"></img>Muzyka
+				</div>
+				<div class="leweMenuOpcja">
+					<img class="leweMenuIkona" src="jpg/ikony/obrazy.png"></img>Obrazy
+				</div>
+				<div class="leweMenuOpcja">
+					<img class="leweMenuIkona" src="jpg/ikony/wideo.png"></img>Wideo
+				</div>
+				<div class="leweMenuOpcja">
+					<img class="leweMenuIkona" src="jpg/ikony/grupa.png"></img>Grupa
+				</div>
+				<div class="leweMenuOpcja">
+					<img class="leweMenuIkona" src="jpg/ikony/komputer.png"></img>Komputer
+				</div>
+				<div class="leweMenuOpcja">
+					<img class="leweMenuIkona" src="jpg/ikony/siec.png"></img>Sieć
+				</div>
+			</div>
+			
+			
+			<div id="stopkaFolder">
+				<img id="ikonkaWfolder"></img>
+				<div id="ileElementow"></div>
+			</div>
+		</div>
+	</div>
+  
+	<div id="ekranGlowny">
+		<div class="ikonka" ondblclick="otworzOkno('kosz','Kosz','folderMin')">
+			<img class="ikonkaImg" src="jpg/ikony/kosz.png"></img><br>
+			Kosz
+		</div>
+		<div class="ikonka" ondblclick="otworzOkno('folder','O mnie','folderMin')">
+			<img class="ikonkaImg" src="jpg/ikony/folder.png"></img><br>
+			O mnie
+		</div>
+		<div class="ikonka" ondblclick="otworzOkno('folder','Kontakt','folderMin')">
+			<img class="ikonkaImg" src="jpg/ikony/folder.png"></img><br>
+			Kontakt
+		</div>
+		<div class="ikonka" ondblclick="otworzOkno('folder','Projekty','folderMin')">
+			<img class="ikonkaImg" src="jpg/ikony/folder.png"></img><br>
+			Projekty
+		</div>
+		<div class="ikonka" ondblclick="otworzOkno('folder','Technologie','folderMin')">
+			<img class="ikonkaImg" src="jpg/ikony/folder.png"></img><br>
+			Technologie
+		</div>
+	</div>
+	
+	<div id="menuStart">
+		<div id="leweMenuStart">
+			<div onclick="otworzOkno('kalkulator','Kalkulator','kalkulator')" class="leweMenuStartOpcja">
+				<img class="leweMenuStartIkona" src="jpg/ikony/kalkulator.png"></img>
+				<div class="leweMenuStartNazwa">Kalkulator</div>
+			</div>
+		</div>
+		<div id="praweMenuStart">
+			<div id="logoTlo">
+				<div onclick="otworzOkno('','','zmienLogo')" id="praweMenuStartLogo"></div>
+			</div>
+			
+			<div class="praweMenuStartOpcja">Dominik Kłaczany</div>
+			<div class="praweMenuStartOpcja">Dokumenty</div>
+			<div class="praweMenuStartOpcja">Obrazy</div>
+			<div class="praweMenuStartOpcja">Muzyka</div>
+			<div class="praweMenuStartOpcja">Komputer</div>
+			<div class="praweMenuStartOpcja">Panel Sterowania</div>
+			<div class="praweMenuStartOpcja">Urządzenia i drukarki</div>
+			<div class="praweMenuStartOpcja">Programy domyślne</div>
+			<div class="praweMenuStartOpcja">Pomoc i obsługa techniczna</div>
+		</div>
+	</div>
+	<div id="pasekZadan">
+		<img id="start" src="jpg/start.png" onclick="menuStart()"></img>
+		<div id="pokazPulpit"></div>
+		<div id="zegar"></div>
+		<div id="glosnosc"><i class="fas fa-volume-up"></i></div>
+		<div id="internet"><i class="fas fa-wifi"></i></div>
+		<div id="klawiatura"><i class="far fa-keyboard"></i></div>
+		<div id="jezyk">PL</div>
+		<div id="pasekZadanProcesy"></div>
+	</div>
+</div>
+
+<div id="telefon">
+	<div id="pasekPowiadomien">
+		<div id="zegarFon"></div>
+		<div class="ikonaPasekPowiadomien"><i class="fas fa-battery-three-quarters"></i></div>
+		<div class="ikonaPasekPowiadomien">78%</div>
+		<div class="ikonaPasekPowiadomien"></div>
+		<div class="ikonaPasekPowiadomien"><i class="fas fa-wifi"></i></div>
+	</div>
+	
+	<div id="zegarFonDuzy"></div>
+	<div id="dataFon"></div>
+	
+	<div id="ikonyFon">
+		<div onclick="oMnieFon()" class="ikonkaFon"><i class="fas fa-user"></i>
+			<div class="podpisIkonaFon">O mnie</div>
+		</div>
+		<div onclick="kontaktFon()" class="ikonkaFon"><i class="fas fa-mobile-alt"></i>
+			<div class="podpisIkonaFon">Kontakt</div>
+		</div>
+		<div class="ikonkaFon"><i class="fas fa-file-alt"></i>
+			<div class="podpisIkonaFon">Projekty</div>
+		</div>
+		<div onclick="technologieFon()" class="ikonkaFon"><i class="fas fa-code"></i>
+			<div class="podpisIkonaFon">Technologie</div>
+		</div>
+		<div onclick="kalkulatorFon()" class="ikonkaFon"><i class="fas fa-calculator"></i>
+			<div class="podpisIkonaFon">Kalkulator</div>
+		</div>
+	</div>
+	
+	<div id="pasekNawiFon">
+		<div onclick="wsteczFon()" class="przyciskNaviFon"><i class="fas fa-arrow-left"></i></div>
+		<div onclick="wsteczFon()" class="przyciskNaviFon"><i class="far fa-circle"></i></div>
+		<div class="przyciskNaviFon"><i class="far fa-square"></i></div>
+	</div>
+	
+	<div id="oMnieFon">
+		<div id="oMnieFonNaglowek">Dominik Kłaczany</div>
+		<div id="oMnieFonWiadomosc">Lorem ipsum dolor sit amet, minimum interesset pri at. Autem sanctus repudiare usu ne. Viris possim assentior an sit, dolorem fabellas volutpat ea per, at mea enim atqui utroque. Usu ea nostrud appetere fabellas, eos at quod democritum, no case meliore abhorreant mei. Quo id consul lobortis. Nec purto eripuit nostrum in, te saepe repudiare his, vitae labore gubergren eu duo. An sed labore aliquip splendide, graece latine ad eum. An diam voluptatibus his. An nostro oportere volutpat per. Regione delenit tibique ut sed, assum vituperata ut usu, quod semper sea id. Eu tibique fastidii mel, pro an esse nibh contentiones, perfecto expetendis delicatissimi id qui. Vero saepe vivendum sit et, eu nihil possit copiosae eam. Per in copiosae constituam, pri veniam utinam legendos ea. Eam et facete oblique, at probo impetus convenire usu, mei no iriure integre instructior. Ius ne quas vituperata. Blandit senserit persecuti et per, nihil graece deleniti usu et. Iusto suscipit splendide vel ne, mollis vulputate ex quo, qui ut offendit laboramus. Pos</div>
+	</div>
+	
+	<div id="kontaktFon">
+		<div id="kontaktFonNaglowek">Dominik Kłaczany</div>
+		<div id="kontaktFonWiadomosc">e-mail: dominik.klaczany@gmail.com</div>
+	</div>
+	
+	<div id="technologieFon">
+		<img id="technologieFonImg" src="jpg/html.png"></img>
+		<div onclick="zmienObraz('l')" id="lewoTech" class="galeriaButton"><</div>
+		<div onclick="zmienObraz('p')" id="prawoTech" class="galeriaButton">></div>
+	</div>
+	<div id="kalkulatorFon">
+		<div id="ekranKalkulatorFon">0</div>
+		
+		<table id="przyciskiTabela">
+			<tr>
+				<td onclick="wypisz('/')" class="przyciskKalkulatorFon">/</td>
+				<td onclick="wypisz('*')" class="przyciskKalkulatorFon">*</td>
+				<td onclick="wyczysc()" colspan="2" class="przyciskKalkulatorFon">C</td>
+			</tr>
+			
+			<tr>
+				<td onclick="wypisz(7)" class="przyciskKalkulatorFon">7</td>
+				<td onclick="wypisz(8)" class="przyciskKalkulatorFon">8</td>
+				<td onclick="wypisz(9)" class="przyciskKalkulatorFon">9</td>
+				<td onclick="wypisz('-')" class="przyciskKalkulatorFon">-</td>
+			</tr>
+			
+			<tr>
+				<td onclick="wypisz(4)" class="przyciskKalkulatorFon">4</td>
+				<td onclick="wypisz(5)" class="przyciskKalkulatorFon">5</td>
+				<td onclick="wypisz(6)" class="przyciskKalkulatorFon">6</td>
+				<td onclick="wypisz('+')" class="przyciskKalkulatorFon">+</td>
+			</tr>
+			
+			<tr>
+				<td onclick="wypisz(1)" class="przyciskKalkulatorFon">1</td>
+				<td onclick="wypisz(2)" class="przyciskKalkulatorFon">2</td>
+				<td onclick="wypisz(3)" class="przyciskKalkulatorFon">3</td>
+				<td onclick="oblicz()" rowspan="2" class="przyciskKalkulatorFonBlue">=</td>
+			</tr>
+			
+			<tr>
+				<td onclick="wypisz(0)" colspan="2" class="przyciskKalkulatorFon">0</td>
+				<td onclick="wypisz('.')" class="przyciskKalkulatorFon">,</td>
+			</tr>
+		</table>
+	</div>
+</div>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
